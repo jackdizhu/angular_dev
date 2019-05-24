@@ -1,6 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h5>
-    {{ title }} HelloWorldComponent1
+    <p>
+      <input #box (keyup)="onKey($event)">
+    </p>
+    <p (click)="onCliekTitle()">
+      page1 title: {{ title }}
+    </p>
+    <p>keys: {{keys}}</p>
+    <Component1 [propTitle]="title" (emitChange)="onEmitChange($event)"></Component1>
+    <p>模板引用变量 box: {{box.value}}</p>
   </h5>
 </div>
